@@ -1,45 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coming Soon</title>
   <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #111;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Arial', sans-serif;
+    body { margin:0; background:#111; color:white; font-family:sans-serif; text-align:center; }
+    h1 { padding:20px; font-size:30px; }
+    select { margin:10px; padding:5px; font-size:16px; }
+    .game { display:none; position:relative; height:60vh; }
+    #box, #circle, #colorBtn {
+      position:absolute; cursor:pointer;
+      width:50px; height:50px;
+      border-radius:10px;
     }
-
-    .scrolling-text {
-      font-size: 3rem;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      white-space: nowrap;
-      position: absolute;
-      animation: scroll-left 5s linear infinite;
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+    #circle { border-radius:50%; background:#0f0; }
+    #box { background:#f00; }
+    #colorBtn { background:#00f; color:#fff; line-height:50px; text-align:center; width:100px; }
+    #score { font-size:18px; margin-top:10px; }
   </style>
 </head>
 <body>
+  <h1>Working on Website</h1>
+  <select onchange="changeGame(this.value)">
+    <option value="clickBox">Click Box</option>
+    <option value="catchCircle">Catch Circle</option>
+    <option value="colorMatch">Color Match</option>
+  </select>
+  <div id="score">Score: 0</div>
 
-  <div class="scrolling-text">Working Onwards...</div>
+  <!-- Game 1 -->
+  <div id="clickBox" class="game">
+    <div id="box"></div>
+  </div>
 
+  <!-- Game 2 -->
+  <div id="catchCircle" class="game">
+    <div id="circle"></div>
+  </div>
+
+  <!-- Game 3 -->
+  <div id="colorMatch" class="game">
+    <div id="colorBtn">Click Me</div>
+  </div>
+
+  <script>
+    let score = 0;
+    const scoreDiv = document.getElementById("score");
+
+    function updateScore() {
+      scoreDiv.textContent = "Score: " + score;
+    }
+
+    function move(el) {
+      el.style.top = Math.random()*60 + "vh";
+      el.style.left = Math.random()*90 + "vw";
+    }
+
+    document.getElementById("box").onclick = () => {
+      score++; updateScore(); move(box);
+    };
+
+    document.getElementById("circle").onclick = () => {
+      score++; updateScore(); move(circle);
+    };
+
+    document.getElementById("colorBtn").onclick = () => {
+      const randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+      colorBtn.style.background = randColor;
+      score++; updateScore(); move(colorBtn);
+    };
+
+    function changeGame(id) {
+      document.querySelectorAll(".game").forEach(g => g.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+
+    // Initial state
+    changeGame("clickBox");
+    move(box); move(circle); move(colorBtn);
+  </script>
 </body>
 </html>
