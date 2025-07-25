@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saurabh Ugale - Portfolio</title>
-  
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  
+
   <style>
     body {
       margin: 0;
@@ -109,7 +109,7 @@
       margin-bottom: 10px;
     }
 
-    /* FUTURISTIC BUTTON STYLING */
+    /* FUTURISTIC GLOWING GOLDEN BUTTONS */
     .buttons {
       display: flex;
       justify-content: center;
@@ -129,30 +129,30 @@
       flex: 0 0 auto;
       padding: 14px 20px;
       text-decoration: none;
-      color: #00fff7;
+      color: #ffae00;
       font-weight: bold;
-      border: 2px solid #00fff7;
+      border: 2px solid #ffaa00;
       border-radius: 20px;
       background-color: transparent;
       transition: all 0.3s ease-in-out;
       font-family: 'Orbitron', sans-serif;
       font-size: 14px;
-      box-shadow: 0 0 10px #00fff7;
+      box-shadow: 0 0 10px #ffae00;
       animation: pulseGlow 3s infinite ease-in-out;
       white-space: nowrap;
     }
 
     .buttons a:hover {
-      background-color: #00fff7;
+      background-color: #ffae00;
       color: #0f0f0f;
       transform: scale(1.1);
-      box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+      box-shadow: 0 0 20px #ffae00, 0 0 40px #ffaa00;
     }
 
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 10px #00fff7; }
-      50% { box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7; }
-      100% { box-shadow: 0 0 10px #00fff7; }
+      0%   { box-shadow: 0 0 10px #ffae00; }
+      50%  { box-shadow: 0 0 20px #ffae00, 0 0 40px #ffaa00; }
+      100% { box-shadow: 0 0 10px #ffae00; }
     }
 
     footer {
@@ -184,6 +184,7 @@
       width: 100%;
     }
 
+    /* RESPONSIVE BUTTONS */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -199,6 +200,11 @@
         flex-direction: row;
         justify-content: flex-start;
         overflow-x: auto;
+      }
+
+      .buttons a {
+        font-size: 12px;
+        padding: 10px 14px;
       }
     }
   </style>
