@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saurabh Ugale - Portfolio</title>
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  
   <style>
     body {
       margin: 0;
@@ -105,75 +109,50 @@
       margin-bottom: 10px;
     }
 
+    /* FUTURISTIC BUTTON STYLING */
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      align-items: center;
+      gap: 16px;
       margin-bottom: 50px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      scroll-behavior: smooth;
     }
 
     .buttons a {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
+      flex: 0 0 auto;
+      padding: 14px 20px;
       text-decoration: none;
-      color: #fff;
+      color: #00fff7;
       font-weight: bold;
+      border: 2px solid #00fff7;
+      border-radius: 20px;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      font-family: 'Orbitron', sans-serif;
       font-size: 14px;
-      transition: transform 0.3s;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
+      box-shadow: 0 0 10px #00fff7;
+      animation: pulseGlow 3s infinite ease-in-out;
+      white-space: nowrap;
     }
 
     .buttons a:hover {
-      transform: scale(1.05);
+      background-color: #00fff7;
+      color: #0f0f0f;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
     }
 
-    .buttons a:nth-child(1) {
-      background-color: #ff6f61;
-    }
-
-    .buttons a:nth-child(2) {
-      background-color: #6a5acd;
-    }
-
-    .buttons a:nth-child(3) {
-      background-color: #20b2aa;
-    }
-
-    .buttons a:nth-child(4) {
-      background-color: #ffb400;
-    }
-
-    .buttons a::before {
-      content: '';
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: white;
-      box-shadow:
-        10px 10px white,
-        20px 20px white,
-        30px 30px white,
-        40px 40px white;
-      animation: sparkle 1s infinite linear;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .buttons a:hover::before {
-      opacity: 1;
-    }
-
-    @keyframes sparkle {
-      0% { transform: translate(-5px, -5px) scale(1); opacity: 0.8; }
-      50% { transform: translate(60px, 60px) scale(1.5); opacity: 0.2; }
-      100% { transform: translate(120px, 120px) scale(1); opacity: 0; }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px #00fff7; }
+      50% { box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7; }
+      100% { box-shadow: 0 0 10px #00fff7; }
     }
 
     footer {
@@ -217,8 +196,9 @@
       }
 
       .buttons {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: flex-start;
+        overflow-x: auto;
       }
     }
   </style>
@@ -249,10 +229,10 @@
 
   <div class="skills" id="skills">
     <h3>My Skills</h3>
-    <p>✔ Language -Java, Python, C++<br>
-       ✔ FrontEnd-HTML, CSS, JavaScript<br>
-       ✔ FrameWark-Flask, django, <br>
-       ✔ Database-SQLite, MySQL, MongoDB<br>
+    <p>✔ Language - Java, Python, C++<br>
+       ✔ FrontEnd - HTML, CSS, JavaScript<br>
+       ✔ FrameWark - Flask, Django<br>
+       ✔ Database - SQLite, MySQL, MongoDB<br>
        ✔ Git, GitHub</p>
   </div>
 
